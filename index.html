@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Bangladesh</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+    <header>
+        <section class="container1">
+                    <div class="container">
+                       <h1>Donate Bangladesh</h1>
+                       <button><a href="#">Blog</a></button>
+            
+                    </div>
+                     <div class="balance">
+                         <span id="balance">5500 BDT</span>
+                     </div>
+        </section>
+    </header>
+
+    <main>
+      <div class="option">
+        <nav>
+            <ul>
+                
+                <button><a href="#">Donation</a></button>
+               <button><a href="#">History</a></button> 
+            </ul>
+        </nav>
+      </div>
+
+
+        <div class="container">
+            <section class="donation-section">
+                <div class="donation-card">
+                    <img src="./assets/noakhali.png" alt="Flood at Noakhali">
+                    <div class="donation-info">
+                        <h2>Donate for Flood at Noakhali, Bangladesh</h2>
+                        <p>The recent floods in Noakhali have caused significant damage to homes and infrastructure. Your donation will help provide essential supplies to those affected by this disaster. Every contribution, big or small, makes a difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+                        <div class="donation-amount">
+                            <span class="amount">0 BDT</span>
+                            <img src="./assets/coin.png" alt="Taka Symbol">
+                        </div>
+                        <input type="number" placeholder="Write Donation Amount" id="donation-amount-1">
+                        <button class="donate-button" onclick="donate('donation-amount-1', 'donation-total-1')">Donate Now</button>
+                    </div>
+                </div>
+
+                <div class="donation-card">
+                    <img src="./assets/feni.png" alt="Flood Relief in Feni">
+                    <div class="donation-info">
+                        <h2>Donate for Flood Relief in Feni, Bangladesh</h2>
+                        <p>The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
+                        <div class="donation-amount">
+                            <span class="amount">600 BDT</span>
+                            <img src="./assets/coin.png" alt="Taka Symbol">
+                        </div>
+                        <input type="number" placeholder="Write Donation Amount" id="donation-amount-2">
+                        <button class="donate-button" onclick="donate('donation-amount-2', 'donation-total-2')">Donate Now</button>
+                    </div>
+                </div>
+
+                <div class="donation-card">
+                    <img src="./assets/quota-protest.png" alt="Aid for Injured in the Quota Movement">
+                    <div class="donation-info">
+                        <h2>Aid for Injured in the Quota Movement</h2>
+                        <p>The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
+                        <div class="donation-amount">
+                            <span class="amount">2400 BDT</span>
+                            <img src="./assets/coin.png" alt="Taka Symbol">
+                        </div>
+                        <input type="number" placeholder="Write Donation Amount" id="donation-amount-3">
+                        <button class="donate-button" onclick="donate('donation-amount-3', 'donation-total-3')">Donate Now</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="donation-total">
+                <h2>Total Donation:</h2>
+                <div class="donation-amount">
+                    <span class="amount" id="donation-total-1">0</span>
+                    <img src="./assets/coin.png" alt="Taka Symbol">
+                </div>
+                <div class="donation-amount">
+                    <span class="amount" id="donation-total-2">0</span>
+                    <img src="./assets/coin.png" alt="Taka Symbol">
+                </div>
+                <div class="donation-amount">
+                    <span class="amount" id="donation-total-3">0</span>
+                    <img src="./assets/coin.png" alt="Taka Symbol">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Donate Bangladesh. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
