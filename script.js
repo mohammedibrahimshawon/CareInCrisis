@@ -70,7 +70,12 @@ function openHistory() {
 }
 
 // Close donation history
+
+
+function showHistoryCard() {
+    document.getElementById("historyCard").style.display = "block";
+}
+
 function closeHistory() {
-    const historyCard = document.getElementById("historyCard");
-    historyCard.style.display = "none";
+    document.getElementById("historyCard").style.display = "none";
 }

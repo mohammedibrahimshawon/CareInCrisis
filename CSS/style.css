@@ -9,13 +9,27 @@ body {
 header {
     position: sticky;
     top: 0;
+    /* padding: 1rem 0; */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.8);
+    /* backdrop-filter: blur(3px); */
+    z-index: 1000;
+    
+}
+
+/* header {
+    position: sticky;
+    top: 0;
     padding: 1rem 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(4px);
     z-index: 1000;
-}
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+} */
 .option {
     display: flex;
     justify-content: center; /* Centers horizontally */
@@ -41,17 +55,37 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 960px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 1rem;
+    background-color: rgb(255, 245, 233);
+    /* backdrop-filter: blur(0.5rem); */
+    z-index: 1000;
+
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    
+
+    
 }
 
+/* .nav-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    margin: 20px;
+} */
+
+/* .nav-left h1 {
+    margin-top: 10px; 
+    font-size: 2em; 
+    text-align: center; 
+} */
 .nav-left {
     display: flex;
     align-items: center;
@@ -60,9 +94,34 @@ header {
 
 .nav-left h1 {
     text-align: center;
-    margin: 20px; /* Adds space around the h1 */
-    font-size: 2em; /* Default font size */
+    margin-left: none;
+    font-size: 2em;
 }
+
+.logo{
+    margin-left: 300px; /* Default for larger screens */
+    width: 70px; /* Default width for larger screens */
+    
+
+}
+
+/* .nav-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    margin: 20px;
+} */
+
+/* .nav-left h1 {
+    margin-top: 10px; 
+    font-size: 2em; 
+    text-align: center; 
+} */
+
+/* Header Styling */
+
+
 
 nav ul {
     list-style: none;
@@ -85,11 +144,24 @@ nav ul li a:hover,
 #history-btn.clicked {
     color: green;
 }
-
+.nav-left button{
+    background-color: lightgreen;
+    border-radius: 5px;
+    width: 80px;
+    height: 30px;
+}
 .balance {
     margin-left: auto;
     font-size: 1.2rem;
     font-weight: bold;
+    /* margin-top: 10px; */
+}
+.balance img{
+    /* margin-top: 10px; */
+    /* max-width: 420px; */
+    /* max-height: 300px; */
+
+
 }
 
 /* Donation and History button under H1 on mobile */
@@ -98,12 +170,17 @@ nav ul li a:hover,
         flex-direction: column;
         align-items: center;
         text-align: center;
+        
     }
 
     .nav-left {
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+    .logo {
+        margin-left: 0; /* Remove left margin for mobile */
+        width: 120px; /* Adjust logo width for tablet */
     }
 
     nav ul {
@@ -241,7 +318,7 @@ footer {
     text-align: center;
 }
 
-.confirmation-card,
+
 .history-card {
     display: none;
     background-color: white;
@@ -255,12 +332,81 @@ footer {
     box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.1);
 }
 
-.confirmation-card p {
+/* .confirmation-card{
+    display: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 50px;
+    padding: 1rem;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.1);
+} */
+
+/* .confirmation-card p {
+    margin-bottom: 1rem;
+} */
+
+/* .confirmation-card button, */
+
+.confirmation-card {
+    display: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 450px;
+    padding: 2rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+    box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.confirmation-card h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.confirmation-card h2 {
+    font-size: 1.5rem;
+    color: green;
     margin-bottom: 1rem;
 }
 
-.confirmation-card button,
-.history-card button {
+.confirmation-card p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.confirmation-card img {
+    width: 60px;
+    margin-bottom: 1rem;
+}
+
+.confirmation-card button {
+    background-color: #ddd;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.confirmation-card button:hover {
+    background-color: #bbb;
+}
+
+/* .history-card button {
     background-color: #28a745;
     color: white;
     padding: 0.5rem 1rem;
@@ -277,7 +423,94 @@ footer {
 
 .history-card ul li {
     padding: 0.5rem 0;
+} */
+
+
+/* History Card Styling */
+.history-card {
+    display: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 450px;
+    max-width: 90%; /* For mobile responsiveness */
+    padding: 1.5rem;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    z-index: 2000;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
+
+.history-card h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.history-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.history-card ul li {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    background-color: #f9f9f9;
+}
+
+.history-card ul li p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.history-card ul li span {
+    font-weight: bold;
+    color: #333;
+}
+
+.history-card button {
+    background-color: #28a745;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.history-card button:hover {
+    background-color: #218838;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .history-card {
+        top: 15%;
+        width: 95%;
+        padding: 1rem;
+    }
+    .history-card h2 {
+        font-size: 1.5rem;
+    }
+    .history-card ul li {
+        padding: 0.8rem;
+    }
+    .history-card button {
+        padding: 0.4rem 0.8rem;
+    }
+    .nav-left h1 {
+        font-size: 1.5em; /* Adjust font size for mobile */
+        margin-left: 0; /* Remove the left margin for mobile */
+    }
+}
+
 
 @media screen and (max-width: 768px) {
     /* Adjust padding and text sizes for smaller screens */
@@ -348,6 +581,14 @@ footer {
 @media screen and (max-width: 480px) {
     .nav-container h1 {
         font-size: 1.2rem;
+    }
+    .logo {
+        margin-left: 0; /* Center or remove margin */
+        width: 100px; /* Smaller logo width for mobile */
+    }
+    .nav-left h1 {
+        font-size: 1.2em; /* Smaller font size for small mobile screens */
+        margin-left: 0; /* Ensure no left margin */
     }
 
     .balance {
