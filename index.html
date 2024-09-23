@@ -8,86 +8,106 @@
 </head>
 <body>
     <header>
-        <section class="container1">
-            <nav>
-                <button class="blog-btn"><a href="#">Blog</a></button>
-                <h1>Donate Bangladesh</h1>
-                <div class="nav-buttons">
-                    <button id="donation-btn"><a href="#">Donation</a></button>
-                    <button id="history-btn" onclick="openHistory()">History</a></button>
+        <section class="nav-container">
+            <div class="navbar">
+                <div class="nav-left">
+                    <button><a href="blog.html" target="_blank">Blog</a></button>
+                    <h1>Donate Bangladesh</h1>
+                    
+                    
                 </div>
-                <div class="balance-container">
-                    <span>Balance:</span>
+
+                <div class="balance">
                     <span id="balance">5500 BDT</span>
                 </div>
-            </nav>
+            </div>
+
+           
+            
         </section>
+        <div class="option">
+            <nav>
+                <ul>
+                    <li><button onclick="setActive(this)"><a href="#">Donation</a></button></li>
+                    <li><button id="history-btn" onclick="openHistory(); setActive(this);"><a href="#">History</a></button></li>
+                </ul>
+            </nav>
+        </div>
+        
     </header>
 
     <main>
         <div class="container">
             <section class="donation-section">
-                <!-- Donation Card 1 -->
                 <div class="donation-card">
                     <img src="./assets/noakhali.png" alt="Flood at Noakhali">
                     <div class="donation-info">
+                        <div class="donation-amount">
+                            <img src="./assets/coin.png" alt="Taka Symbol">
+                            <span class="amount" id="current-donation-amount-1">0 BDT</span>
+                        </div>
                         <h2>Donate for Flood at Noakhali, Bangladesh</h2>
-                        <p>The recent floods in Noakhali have caused significant damage to homes and infrastructure...</p>
-                        <div class="donation-amount">
-                            <span id="current-donation-amount-1">0</span> BDT
-                        </div>
-                        <input type="number" id="donation-amount-1" placeholder="Enter amount">
-                        <button onclick="donate('Noakhali', 1)">Donate Now</button>
-                        <div id="error-message-1" class="error-message"></div>
+                        <p>The recent floods in Noakhali have caused significant damage to homes and infrastructure. Your donation will help provide essential supplies to those affected by this disaster.</p>
+                        <input type="number" placeholder="Write Donation Amount" id="donation-amount-1">
+                        <button class="donate-button" onclick="donate('Noakhali', 1)">Donate Now</button>
+                        <p id="error-message-1" class="error"></p>
                     </div>
                 </div>
 
-                <!-- Donation Card 2 -->
                 <div class="donation-card">
-                    <img src="./assets/feni.png" alt="Flood Relief in Feni">
+                    <img src="./assets/feni.png" alt="Flood at Feni">
                     <div class="donation-info">
+                        <div class="donation-amount">
+                            <img src="./assets/coin.png" alt="Taka Symbol">
+                            <span class="amount" id="current-donation-amount-2">600 BDT</span>
+                        </div>
                         <h2>Donate for Flood Relief in Feni, Bangladesh</h2>
-                        <p>The recent floods in Feni have devastated local communities...</p>
-                        <div class="donation-amount">
-                            <span id="current-donation-amount-2">600</span> BDT
-                        </div>
-                        <input type="number" id="donation-amount-2" placeholder="Enter amount">
-                        <button onclick="donate('Feni', 2)">Donate Now</button>
-                        <div id="error-message-2" class="error-message"></div>
+                        <p>The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid.</p>
+                        <input type="number" placeholder="Write Donation Amount" id="donation-amount-2">
+                        <button class="donate-button" onclick="donate('Feni', 2)">Donate Now</button>
+                        <p id="error-message-2" class="error"></p>
                     </div>
                 </div>
 
-                <!-- Donation Card 3 -->
                 <div class="donation-card">
-                    <img src="./assets/quota-protest.png" alt="Aid for Injured in the Quota Movement">
+                    <img src="./assets/quota-protest.png" alt="Aid for Injured in Quota Movement">
                     <div class="donation-info">
-                        <h2>Aid for Injured in the Quota Movement</h2>
-                        <p>The recent Quota movement has resulted in numerous injuries...</p>
                         <div class="donation-amount">
-                            <span id="current-donation-amount-3">2400</span> BDT
+                            <img src="./assets/coin.png" alt="Taka Symbol">
+                            <span class="amount" id="current-donation-amount-3">2400 BDT</span>
                         </div>
-                        <input type="number" id="donation-amount-3" placeholder="Enter amount">
-                        <button onclick="donate('Quota Movement', 3)">Donate Now</button>
-                        <div id="error-message-3" class="error-message"></div>
+                        <h2>Aid for Injured in the Quota Movement</h2>
+                        <p>Your donation supports individuals who were injured during the recent Quota movement protests. Contributions help provide necessary medical aid.</p>
+                        <input type="number" placeholder="Write Donation Amount" id="donation-amount-3">
+                        <button class="donate-button" onclick="donate('Quota', 3)">Donate Now</button>
+                        <p id="error-message-3" class="error"></p>
                     </div>
+                </div>
+            </section>
+
+
+            <section class="donation-total">
+                <h2>Total Donation:</h2>
+                <div class="donation-amount">
+                    <span class="amount" id="donation-total">0 BDT</span>
+                    <img src="./assets/coin.png" alt="Taka Symbol">
                 </div>
             </section>
         </div>
 
-        <!-- Donation History Section -->
-        <section id="historyCard" style="display: none;">
+        <!-- Confirmation Card -->
+        <div class="confirmation-card" id="confirmationCard">
+            <p>Thank you for your donation!</p>
+            <button onclick="closeConfirmationCard()">Close</button>
+        </div>
+
+        <!-- History Section -->
+        <div class="history-card" id="historyCard">
             <h2>Donation History</h2>
             <ul id="donation-history-list"></ul>
             <button onclick="closeHistory()">Close History</button>
-        </section>
+        </div>
 
-        <!-- Confirmation Card -->
-        <section id="confirmationCard" style="display: none;">
-            <div class="card">
-                <h2>Thank you for your donation!</h2>
-                <button onclick="closeConfirmationCard()">Close</button>
-            </div>
-        </section>
     </main>
 
     <footer>

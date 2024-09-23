@@ -3,16 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate Bangladesh - Blog</title>
+    <title>Donate Bangladesh</title>
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
     <header>
-        <h1>Donate Bangladesh Blog</h1>
+        <section class="nav-container">
+            <div class="navbar">
+                <div class="nav-left">
+                    <button><a href="index.html" target="_blank">Home</a></button>
+                    <h1>Donate Bangladesh</h1>
+                    
+                    
+                </div>
+
+                <div class="balance">
+                    <span id="balance">5500 BDT</span>
+                </div>
+            </div>
+
+           
+            
+        </section>
+        <div class="option">
+            <nav>
+                <ul>
+                   <button><li><a href="#">Donation</a></li></button> 
+                   <button><li><a href="#" id="history-btn" onclick="openHistory()">History</a></li></button>
+                    
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
-        <p>Welcome to the Donate Bangladesh blog! Here you will find updates and stories about our ongoing projects and impact.</p>
-        <!-- Add your blog content here -->
+        <h2>Important FAQ</h2>
+        <ol>
+            <li>
+                <strong>What is the Document Object Model?</strong><br>
+                The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content.
+            </li>
+            <li>
+                <strong>How do you select an element from the DOM?</strong><br>
+                You can select elements using methods such as `getElementById()`, `getElementsByClassName()`, `getElementsByTagName()`, `querySelector()`, and `querySelectorAll()`.
+            </li>
+            <li>
+                <strong>What is event delegation in the context of the DOM, and why is it useful?</strong><br>
+                Event delegation is a technique where you add an event listener to a parent element instead of multiple child elements. This is useful because it improves performance and ensures that dynamically added elements also trigger the event.
+            </li>
+            <li>
+                <strong>How do you manipulate an element’s attributes and styles using the DOM?</strong><br>
+                You can manipulate attributes using methods like `setAttribute()` or `removeAttribute()`. Styles can be modified using the `style` property, for example: `element.style.color = 'blue';`.
+            </li>
+        </ol>
     </main>
     <footer>
         <div class="container">

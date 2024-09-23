@@ -1,139 +1,382 @@
-/* Basic Styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: beige;
     color: #333;
+    background-color: beige;
 }
 
 header {
-    padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
-    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
 }
 
-nav {
+.option {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+}
+
+.option button {
+    color: #333;
+    background-color: transparent; /* Make background transparent */
+    border: 2px solid greenyellow; /* Add a border for better visibility */
+    border-radius: 10px;
+    height: 30px;
+    width: 150px;
+    margin: 10px;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.option button.active {
+    background-color: greenyellow; /* Active button background */
+}
+
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
     padding: 0 1rem;
 }
 
-.blog-btn {
-    float: left;
-}
-
-h1 {
-    text-align: center;
-    margin: 0;
-}
-
-.nav-buttons {
+.navbar {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-left {
+    display: flex;
     align-items: center;
+    
 }
 
-#donation-btn, #history-btn {
-    margin-top: 10px;
-    background-color: greenyellow;
-    color: #333;
-    border-radius: 10px;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
+.nav-left h1 {
+    text-align: center;
+    margin: 20px; /* Adds space around the h1 */
+    font-size: 2em; /* Default font size */
 }
 
-.balance-container {
+nav ul {
+    list-style: none;
     display: flex;
-    justify-content: flex-end;
-    padding: 10px 0;
+    gap: 2rem;
 }
 
-main {
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+#history-btn.clicked {
+    color: green;
+}
+
+.balance {
+    margin-left: auto;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Donation and History button under H1 on mobile */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-left {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .balance {
+        margin: 1rem 0;
+    }
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
     padding: 2rem 1rem;
 }
 
-.donation-card {
-    margin: 20px auto;
-    padding: 15px;
-    max-width: 600px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.donation-section {
+    display: block;
+     /* display: flex; */
+    flex-wrap: wrap; /* Allows the cards to wrap when the screen is smaller */
+    gap: 2rem; /* Space between cards */
+    justify-content: space-between;
 }
+.alldonationbox{
+    display: flex;
 
-.donation-info {
+}
+.container {
+    max-width: 960px;
+    margin: 2rem auto;
     padding: 1rem;
 }
 
+.donation-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.donation-card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.donation-card img {
+    max-width: 480px;
+    border-radius: 10px;
+}
+
+.donation-info {
+    padding-left: 1rem;
+    flex-grow: 1;
+}
+
 .donation-info h2 {
+    margin-top: 0;
     color: #333;
+}
+
+.donation-info p {
+    color: #666;
 }
 
 .donation-amount {
-    font-weight: bold;
-    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
 }
 
-.error-message {
-    color: red;
+.donation-amount img {
+    width: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.donate-button {
+    background-color: #7FC97F;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.donate-button:hover {
+    background-color: #6BB076;
 }
 
 input[type="number"] {
-    padding: 10px;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 100%;
-    margin-bottom: 10px;
 }
 
-button {
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+.donate-button {
     background-color: #ffc107;
     color: #fff;
-    padding: 10px;
+    padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
+.donate-button:hover {
     background-color: #e0a800;
 }
 
-#confirmationCard {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.donation-total {
     background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-}
-
-#historyCard {
-    display: none;
-    padding: 20px;
-    background-color: #fff;
+    padding: 2rem;
+    margin-top: 2rem;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 600px;
-}
-
-#history-btn.clicked {
-    background-color: #ffc107;
-    color: #333;
 }
 
 footer {
     background-color: #333;
     color: #fff;
+    padding: 1rem 0;
     text-align: center;
+}
+
+.confirmation-card,
+.history-card {
+    display: none;
+    background-color: white;
+    border: 1px solid #ccc;
     padding: 1rem;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-card p {
+    margin-bottom: 1rem;
+}
+
+.confirmation-card button,
+.history-card button {
+    background-color: #28a745;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.history-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.history-card ul li {
+    padding: 0.5rem 0;
+}
+
+@media screen and (max-width: 768px) {
+    /* Adjust padding and text sizes for smaller screens */
+    header {
+        padding: 0.5rem;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .balance {
+        font-size: 1rem;
+    }
+
+    .blog-button {
+        padding: 0.3rem 0.7rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .donation-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .donation-card img {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .donation-info {
+        padding-left: 0;
+    }
+
+    .donation-info h2 {
+        font-size: 1.1rem;
+    }
+
+    .donation-info p {
+        font-size: 0.9rem;
+    }
+
+    .donate-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .donation-total {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .donation-total h2 {
+        font-size: 1rem;
+    }
+
+    .donation-amount img {
+        width: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-container h1 {
+        font-size: 1.2rem;
+    }
+
+    .balance {
+        font-size: 0.9rem;
+    }
+
+    .option button {
+        padding: 0.3rem 0.7rem;
+        font-size: 0.8rem;
+    }
+
+    .donation-card {
+        padding: 1rem 0.5rem;
+    }
+
+    .donate-button {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .donation-info h2 {
+        font-size: 1rem;
+    }
+
+    .donation-info p {
+        font-size: 0.8rem;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
 }
